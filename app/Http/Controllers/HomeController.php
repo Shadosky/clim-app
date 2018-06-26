@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Models\Users::all();
-        dd($user);
+        dump($user);
         return view('home');
     }
 }
