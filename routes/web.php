@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
-
 Route::get('/login', function () {
     return view('login');
 });

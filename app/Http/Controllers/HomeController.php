@@ -25,8 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Models\Users::all();
-        dump($user);
-        return view('home');
+        return view('dashboard');
     }
 }
