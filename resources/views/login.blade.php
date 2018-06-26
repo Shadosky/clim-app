@@ -3,7 +3,8 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form>
+            <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login</label>
                     <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp"
@@ -21,10 +22,6 @@
                 </div>
                 <a class="btn btn-primary btn-block" href="index.html">Login</a>
             </form>
-            <div class="text-center">
-                <a class="d-block small mt-3" href="register.html">Register an Account</a>
-                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-            </div>
         </div>
     </div>
 @stop
