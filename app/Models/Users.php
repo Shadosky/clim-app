@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-    protected $connection = 'pgsql';
+    protected $connection = 'mysql';
 
     /**
      * The table associated with the model.
@@ -26,7 +26,7 @@ class Users extends Model
      * @var array
      */
     protected $fillable = [
-        'email', 'password',
+        'name', 'password',
     ];
 
     /**
