@@ -15,7 +15,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
     <title>{{ getenv('APP_NAME') }}</title>
 
     <!--Static StyleSheets-->
@@ -35,37 +34,28 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Preloader -->
 <div class="preloader">
     <div class="cssload-speeding-wheel"></div>
 </div>
 @if(Auth::check() && !\Request::is('login'))
-    <div id="wrapper">
-        <!-- Navigation -->
-    @include('layouts.partials.topbar')
-
-    @if (!$isErrorPage)
-        <!-- Left navbar-header -->
-        @include('layouts.partials.sidebar')
-        <!-- Left navbar-header end -->
-    @endif
-
+    <!-- Navigation -->
+    @include('layouts.partials.nav')
     <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
+    <div class="content-wrapper">
+        <div class="container-fluid">
                 @yield('content')
-            </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->
+        @include('layouts.partials.footer')
     </div>
+
 @else
     <section id="wrapper" class="login-register custom-login">
         @yield('content')
     </section>
 @endif
-@stack('modals')
+
 <!-- /#wrapper -->
 <script src="{{ mix('/js/app.js') }}"></script>
 <script src="{{ mix('/js/sb-admin.js') }}"></script>
@@ -79,7 +69,6 @@
         });
     });
 </script>
-@stack('scripts')
-@yield('footer')
+
 </body>
 </html>
