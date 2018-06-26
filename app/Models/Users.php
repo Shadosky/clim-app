@@ -8,7 +8,7 @@
 namespace App\Models;
 
 
-class Users
+class Users extends Model
 {
     protected $connection = 'psql';
 
