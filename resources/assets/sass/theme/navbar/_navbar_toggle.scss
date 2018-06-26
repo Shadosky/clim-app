@@ -2,9 +2,6 @@
   overflow-x: hidden;
 
   background: white;
-  @media (min-width: 992px) {
-    margin-left: $sidenav-base-width;
-  }
 }
 
 // Toggling the Sidenav
