@@ -7,20 +7,20 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login</label>
-                    <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp"
+                    <input class="form-control" id="exampleInputEmail1" name="email" type="text" aria-describedby="emailHelp"
                            placeholder="Enter login">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+                    <input class="form-control" id="exampleInputPassword1" name="password" type="password" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Remember Password</label>
+                            <input class="form-check-input" name="remember" type="checkbox"> Remember Password</label>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block" href="index.html">Login</a>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
         </div>
     </div>
