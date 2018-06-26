@@ -5,8 +5,9 @@
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Login</label>
+                    <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp"
+                           placeholder="Enter login">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
