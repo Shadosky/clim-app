@@ -11,14 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-    protected $connection = 'psql';
+    protected $connection = 'pgsql';
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'versions';
+    protected $table = 'users';
 
     /**
      * Fillable fields
