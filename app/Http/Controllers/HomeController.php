@@ -41,7 +41,7 @@ class HomeController extends Controller
     public function vote(VoteRequest $request)
     {
         $vote = $request->getVote();
-        $user = Models\Users::find(Auth::id());
+        $user = Models\Users::find(Auth::id())->with('vote');
         $user->vote = $vote;
         return $user->save();
     }
