@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $user = Models\Users::find(Auth::user()->id);
         dump($user);
-        dump($user->vote());
+        dump($user->vote);
         return view('dashboard');
     }
 }
