@@ -33,7 +33,7 @@ class HomeController extends Controller
         foreach ($votes as $line){
             $result[$line->vote] ++;
         }
-        dd($result);
-        return view('dashboard', compact('user', 'votes'));
+
+        return view('dashboard', compact('user', 'result'));
     }
 }

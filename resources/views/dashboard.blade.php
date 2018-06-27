@@ -41,7 +41,7 @@
             labels: ["Clim On", "Clim Off"],
             datasets: [{
                 label: '# of Votes',
-                data: [4, 2],
+                data: [{{$result['a']}}, {{$result['b']}}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)'
