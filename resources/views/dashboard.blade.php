@@ -9,6 +9,11 @@
 @extends('layouts.default')
 @section('content')
     <div class="row">
+        <div class="col-sm-8 my-auto">
+            <canvas id="myBarChart" width="100" height="50"></canvas>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6 text-center">
             <div class="card text-white bg-info mb-3" style="max-width: 18rem; margin: auto;">
                 <div class="card-header">Clim ON</div>
