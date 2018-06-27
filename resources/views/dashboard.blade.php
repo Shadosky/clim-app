@@ -38,7 +38,7 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Clim On", "Clim Off"],
+            labels: ["On", "Off"],
             datasets: [{
                 label: '# of Votes',
                 data: [{{$result['a']}}, {{$result['b']}}],
