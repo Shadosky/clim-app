@@ -56,16 +56,16 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => $dbopts["host"],
-            'port' => $dbopts["port"],
-            'database' => ltrim($dbopts["path"],'/'),
-            'username' => $dbopts["user"],
-            'password' => $dbopts["pass"],
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
+//            'driver' => 'pgsql',
+//            'host' => $dbopts["host"],
+//            'port' => $dbopts["port"],
+//            'database' => ltrim($dbopts["path"],'/'),
+//            'username' => $dbopts["user"],
+//            'password' => $dbopts["pass"],
+//            'charset' => 'utf8',
+//            'prefix' => '',
+//            'schema' => 'public',
+//            'sslmode' => 'prefer',
         ],
 
         'sqlsrv' => [

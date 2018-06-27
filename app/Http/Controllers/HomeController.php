@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VoteRequest;
 use Illuminate\Http\Request;
 use App\Models;
 use Illuminate\Support\Facades\Auth;
@@ -35,5 +36,13 @@ class HomeController extends Controller
         }
 
         return view('dashboard', compact('user', 'result'));
+    }
+
+    public function vote(VoteRequest $request)
+    {
+        $vote = $request->getVote();
+        $user = Models\Users::find(Auth::id());
+        $user->vote = $vote;
+        return $user->save();
     }
 }
