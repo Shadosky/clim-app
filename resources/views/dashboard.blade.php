@@ -68,7 +68,7 @@
         jQuery(document).ready(function () {
             $(".card").on("click", function(){
                 var url = "/vote";
-                var data = $(this).data("val");
+                var data = {vote: $(this).data("val")};
                 jQuery.ajax({
                     type: "POST",
                     url: url,
