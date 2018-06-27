@@ -43,12 +43,12 @@
                 label: '# of Votes',
                 data: [{{$result['a']}}, {{$result['b']}}],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)'
+                    'rgba(23, 162, 184, 0.2)',
+                    'rgba(255, 193, 7, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)'
+                    'rgba(17, 116, 132, 1)',
+                    'rgba(183, 139, 12, 1)'
                 ],
                 borderWidth: 1
             }]
