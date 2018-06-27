@@ -38,6 +38,7 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
+                labels: ["Red", "Blue"],
                 datasets: [{
                     label: '# of Votes',
                     data: [{{$result['a']}}, {{$result['b']}}],
