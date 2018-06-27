@@ -9,7 +9,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class PollVotes extends Model
 {
     protected $connection = 'mysql';
 
@@ -18,7 +18,7 @@ class Users extends Model
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'poll_votes';
 
     /**
      * Fillable fields
@@ -26,16 +26,7 @@ class Users extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
+        'id_user', 'vote',
     ];
 
     /**
@@ -44,12 +35,4 @@ class Users extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * Get the phone record associated with the user.
-     */
-    public function vote()
-    {
-        return $this->hasOne('App\PollVotes', 'id_user');
-    }
 }
