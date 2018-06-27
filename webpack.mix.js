@@ -16,3 +16,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/theme/sb-admin.scss', 'public/css')
    .copy('node_modules/font-awesome/fonts/*', 'public/fonts');
+
+mix.version([
+    'public/css/app.css',
+    'public/css/sb-admin.css',
+    'public/js/app.js',
+    'public/js/sb-admin.js'
+]);
