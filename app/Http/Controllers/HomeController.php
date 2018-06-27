@@ -26,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd(Auth::user()->id);
+        $user = Models\Users::find(Auth::user()->id);
+        dump($user);
+        dump($user->vote());
         return view('dashboard');
     }
 }
