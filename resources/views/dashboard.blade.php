@@ -9,7 +9,7 @@
 @extends('layouts.default')
 @section('content')
     <div class="row">
-        <div class="col-sm-8 my-auto" style="margin: auto;">
+        <div class="col-sm-8 my-auto" id="canvas-holder" style="margin: auto;">
             <canvas id="myChart" width="100" height="50"></canvas>
         </div>
     </div>
@@ -38,7 +38,7 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["Red", "Blue"],
+                labels: [" ", " "],
                 datasets: [{
                     label: '# of Votes',
                     data: [{{$result['a']}}, {{$result['b']}}],
@@ -87,11 +87,12 @@
                     url: url,
                     dataType: "json",
                     success: function (data) {
-                        $('#myChart').replaceWith('<canvas id="myChart" width="100" height="50"></canvas>');
+                        $('#canvas-holder').html('<canvas id="myChart" width="100" height="50"></canvas>');
                         var ctx = document.getElementById("myChart");
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
+                                labels: [" ", " "],
                                 datasets: [{
                                     label: '# of Votes',
                                     data: data,
