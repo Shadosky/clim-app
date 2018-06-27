@@ -55,6 +55,6 @@ class HomeController extends Controller
         foreach ($votes as $line){
             $result[$line->vote] ++;
         }
-        return json_encode($result);
+        return json_encode([$result['a'], $result['b']]);
     }
 }

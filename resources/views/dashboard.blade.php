@@ -75,6 +75,7 @@
                     data: data,
                     dataType: "json",
                     success: function (data) {
+                        console.log(data);
                         reload();
                     }
                 });
