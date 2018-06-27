@@ -27,8 +27,13 @@ class HomeController extends Controller
     public function index()
     {
         $user = Models\Users::find(Auth::user()->id);
-        dump($user);
-        dump($user->vote);
-        return view('dashboard');
+        $votes = Models\PollVotes::all();
+        $result['a'] = 0;
+        $result['b'] = 0;
+        foreach ($votes as $line){
+            $result[$line->vote] ++;
+        }
+        dd($result);
+        return view('dashboard', compact('user', 'votes'));
     }
 }
