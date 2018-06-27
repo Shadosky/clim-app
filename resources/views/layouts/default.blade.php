@@ -60,7 +60,7 @@
 <!-- /#wrapper -->
 <script src="{{ mix('/js/app.js') }}"></script>
 <script src="{{ mix('/js/sb-admin.js') }}"></script>
-<script src="{{ mix('/js/sb-admin-chart.js') }}"></script>
+<script src="{{ mix('/js/sb-admin-charts.js') }}"></script>
 
 <script>
     $(function () {
