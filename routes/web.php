@@ -18,4 +18,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('default');
+
 Route::post('/vote', 'HomeController@vote');
+Route::get('/vote', 'HomeController@getVote');

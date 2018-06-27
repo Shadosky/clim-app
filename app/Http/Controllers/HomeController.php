@@ -46,4 +46,15 @@ class HomeController extends Controller
             ['vote' => $vote]
         );
     }
+
+    public function getVote()
+    {
+        $votes = Models\PollVotes::all();
+        $result['a'] = 0;
+        $result['b'] = 0;
+        foreach ($votes as $line){
+            $result[$line->vote] ++;
+        }
+        return json_encode($result);
+    }
 }

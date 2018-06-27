@@ -38,7 +38,6 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["On", "Off"],
                 datasets: [{
                     label: '# of Votes',
                     data: [{{$result['a']}}, {{$result['b']}}],
@@ -75,10 +74,50 @@
                     data: data,
                     dataType: "json",
                     success: function (data) {
-                        console.log(data);
+                        reload();
                     }
                 });
             });
+
+            var reload = function(){
+                var url = "/vote";
+                jQuery.ajax({
+                    type: "GET",
+                    url: url,
+                    dataType: "json",
+                    success: function (data) {
+                        $('#myChart').replaceWith('<canvas id="myChart" width="100" height="50"></canvas>');
+                        var ctx = document.getElementById("myChart");
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: data,
+                                    backgroundColor: [
+                                        'rgba(23, 162, 184, 0.2)',
+                                        'rgba(255, 193, 7, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(17, 116, 132, 1)',
+                                        'rgba(183, 139, 12, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    }
+                });
+            };
         });
     </script>
 @stop
