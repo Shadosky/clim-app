@@ -35,4 +35,12 @@ class PollVotes extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * Get the user that owns the vote.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Users', 'id_user');
+    }
 }
