@@ -50,6 +50,6 @@ class Users extends Model
      */
     public function vote()
     {
-        return $this->hasOne('App\PollVotes', 'id_user');
+        return $this->hasOne('App\Models\PollVotes', 'id_user');
     }
 }
