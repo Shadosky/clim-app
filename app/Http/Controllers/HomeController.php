@@ -28,7 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = Models\Users::find(Auth::user()->id);
-        $votes = Models\PollVotes::all();
+        $now = time();
+        $halfHour = $now - 1800;
+        $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
         foreach ($votes as $line){
