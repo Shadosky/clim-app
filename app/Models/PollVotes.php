@@ -26,7 +26,7 @@ class PollVotes extends Model
      * @var array
      */
     protected $fillable = [
-        'id_user', 'vote',
+        'id_user', 'vote', 'update_time'
     ];
 
     /**
