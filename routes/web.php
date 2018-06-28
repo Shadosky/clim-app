@@ -11,15 +11,12 @@
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
 Auth::routes();
 
 Route::get('/register', function () {
-    return view('login');
+    return redirect('login');
 });
-Route::get('/topSecret', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::get('/topSecret', 'Auth\RegisterController@showRegistrationForm')->name('register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('default');
