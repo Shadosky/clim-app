@@ -16,7 +16,11 @@ Auth::routes();
 Route::get('/register', function () {
     return redirect('login');
 });
+Route::post('/register', function () {
+    return null;
+});
 Route::get('/topSecret', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/topSecret', 'Auth\RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('default');
