@@ -41,19 +41,18 @@ class HomeController extends Controller
 
     public function vote(VoteRequest $request)
     {
+        $time = date('U');
         $vote = $request->getVote();
         return Models\PollVotes::updateOrCreate(
             ['id_user' => Auth::id()],
-            ['vote' => $vote]
+            ['vote' => $vote, 'update_time' => $time]
         );
     }
 
     public function getVote()
     {
         $halfHour = date('U') - (60*30);
-        dump($halfHour);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
-        dump($votes);
         $result['a'] = 0;
         $result['b'] = 0;
 
