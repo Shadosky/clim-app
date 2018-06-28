@@ -74,7 +74,7 @@
                     url: url,
                     data: data,
                     dataType: "json",
-                    success: function (data) {
+                    success: function () {
                         reload();
                     }
                 });
@@ -120,6 +120,9 @@
                     }
                 });
             };
+
+            var refreshTime = {{getenv('REFRESH_TIME')}};
+            var myTimer = setInterval(reload, refreshTime);
         });
     </script>
 @stop
