@@ -28,8 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Models\Users::find(Auth::user()->id);
-        $now = date('u');
-        $halfHour = $now - 1800;
+        $halfHour = date('U') - (60*30);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
@@ -51,8 +50,7 @@ class HomeController extends Controller
 
     public function getVote()
     {
-        $now = date('u');
-        $halfHour = $now - 1800;
+        $halfHour = date('U') - (60*30);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
