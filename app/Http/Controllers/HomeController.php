@@ -28,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Models\Users::find(Auth::user()->id);
-        $halfHour = date('U') - (60*30);
+        $refreshTime = getenv('VOTE_ACTIVE_TIME');
+        $halfHour = date('U') - (60*$refreshTime);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
@@ -51,7 +52,8 @@ class HomeController extends Controller
 
     public function getVote()
     {
-        $halfHour = date('U') - (60*30);
+        $refreshTime = getenv('VOTE_ACTIVE_TIME');
+        $halfHour = date('U') - (60*$refreshTime);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
