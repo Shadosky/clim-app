@@ -51,7 +51,9 @@ class HomeController extends Controller
     public function getVote()
     {
         $halfHour = date('U') - (60*30);
+        dump($halfHour);
         $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
+        dump($votes);
         $result['a'] = 0;
         $result['b'] = 0;
 
