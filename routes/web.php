@@ -19,8 +19,8 @@ Route::get('/register', function () {
 Route::post('/register', function () {
     return null;
 });
-Route::get('/topSecret', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/topSecret', 'Auth\RegisterController@register');
+Route::get('/kusanagi', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/kusanagi', 'Auth\RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('default');
