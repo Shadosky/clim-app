@@ -121,7 +121,7 @@
                 });
             };
 
-            var refreshTime = {{getenv('REFRESH_TIME')}};
+            var refreshTime = {{getenv('REFRESH_TIME')}}*1000;
             var myTimer = setInterval(reload, refreshTime);
         });
     </script>
