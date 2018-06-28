@@ -49,10 +49,14 @@ class HomeController extends Controller
 
     public function getVote()
     {
-        $votes = Models\PollVotes::all();
+        $now = time();
+        $halfHour = $now - 1800;
+        $votes = Models\PollVotes::where("update_time", ">", $halfHour)->get();
         $result['a'] = 0;
         $result['b'] = 0;
+
         foreach ($votes as $line){
+            if($line->update_time)
             $result[$line->vote] ++;
         }
         return json_encode([$result['a'], $result['b']]);
